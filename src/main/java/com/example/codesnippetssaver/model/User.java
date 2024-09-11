@@ -1,7 +1,5 @@
 package com.example.codesnippetssaver.model;
 
-
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
@@ -15,10 +13,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    private String firstname;
-
-    @Column(nullable = false)
-    private String lastname;
+    private String name; // Combined 'firstname' and 'lastname' into 'name'
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -40,20 +35,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
