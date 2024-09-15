@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "users") // Ensure this matches your database table
+@Table(name = "users") 
 public class User {
 
     @Id
@@ -13,7 +13,7 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    private String name; // Combined 'firstname' and 'lastname' into 'name'
+    private String name; 
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -25,7 +25,7 @@ public class User {
     @JsonManagedReference
     private List<CodeSnippet> codeSnippets; // List of code snippets owned by the user
 
-    // Getters, Setters, Constructors, etc.
+  
 
     public Long getId() {
         return id;
